@@ -27,18 +27,18 @@ class StudentRetrive(GenericAPIView,RetrieveModelMixin):
     def get(self,request,*args,**kwargs):
         return self.retrieve(request,*args,**kwargs)
 
-class StudentUpdate(GenericAPIView,UpdateModelMixin):
-    queryset = Student.objects.all()
-    serializer_class = StudentSerializer
-
-    def put(self,request,*args,**kwargs):
-        return self.update(request,*args,**kwargs)
-
-#
-# class StudentDestroy(GenericAPIView,DestroyModelMixin):
+# class StudentUpdate(GenericAPIView,UpdateModelMixin):
 #     queryset = Student.objects.all()
 #     serializer_class = StudentSerializer
 #
-#     def destroy(self, request, *args, **kwargs):
-#         return self.destroy(request,*args,**kwargs)
+#     def put(self,request,*args,**kwargs):
+#         return self.update(request,*args,**kwargs)
+
+
+ class StudentDestroy(GenericAPIView,DestroyModelMixin):
+     queryset = Student.objects.all()
+     serializer_class = StudentSerializer
+
+     def destroy(self, request, *args, **kwargs):
+          return self.destroy(request,*args,**kwargs)
 
